@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,16 +8,60 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
   <style>
-    .hover-card { transition: all 0.3s; }
-    .hover-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.12); }
-    .project-img { cursor: zoom-in; }
-    .img-standard { width: 100%; height: 180px; object-fit: cover; }
-    .img-small { width: 80px; height: 80px; object-fit: contain; margin: 0 auto; display: block; }
-    .profile-img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; }
-    .nav-link:hover { background-color: #3b82f6; color: #fff !important; border-radius: 6px; }
+    .hover-card {
+      transition: all 0.3s;
+    }
+
+    .hover-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
+    }
+
+    .project-img {
+      cursor: zoom-in;
+    }
+
+    .img-standard {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .img-small {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .nav-link:hover {
+      background-color: #3b82f6;
+      color: #fff !important;
+      border-radius: 6px;
+    }
+
     /* Modal */
-    #modalProject3 { display: none; position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
-    #modalProject3.show { display: flex; }
+    #modalProject3 {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(0, 0, 0, 0.6);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #modalProject3.show {
+      display: flex;
+    }
   </style>
 </head>
 
@@ -39,8 +84,8 @@
         <li><a class="nav-link px-3 py-1 font-semibold" href="#softskill">Soft Skills</a></li>
         <li>
           <a class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-             href="pdf/cv.pdf" download>
-            <i class="fa fa-download mr-1"></i>Download CV
+            href="pdf/cv.pdf" target="_blank">
+            <i class="fa fa-eye mr-1"></i>Lihat CV
           </a>
         </li>
       </ul>
@@ -55,8 +100,8 @@
         <li><a class="nav-link block px-3 py-2 font-semibold" href="#softskill">Soft Skills</a></li>
         <li>
           <a class="inline-block mt-1 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
-             href="pdf/cv.pdf" download>
-            <i class="fa fa-download mr-1"></i>Download CV
+            href="pdf/cv.pdf" target="_blank">
+            <i class="fa fa-eye mr-1"></i>Lihat CV
           </a>
         </li>
       </ul>
@@ -70,8 +115,10 @@
       <h2 class="text-2xl font-bold mt-3">Halo, Saya Raihan Riko Farandsyah</h2>
       <p class="mx-auto mt-3 text-gray-600 max-w-xl">
         Saya seorang pengembang front-end yang fokus pada solusi. Saya bersemangat dalam pengembangan web,
-        dengan keahlian dalam desain UI/UX dan menciptakan sistem yang tidak hanya efisien tetapi juga responsif. Dengan pondasi kuat dalam HTML5,
-        CSS3, dan JavaScript, saya berkomitmen untuk membangun antarmuka web yang modern, fungsional, dan memberikan pengalaman pengguna yang luar biasa.
+        dengan keahlian dalam desain UI/UX dan menciptakan sistem yang tidak hanya efisien tetapi juga responsif. Dengan
+        pondasi kuat dalam HTML5,
+        CSS3, dan JavaScript, saya berkomitmen untuk membangun antarmuka web yang modern, fungsional, dan memberikan
+        pengalaman pengguna yang luar biasa.
       </p>
       <div class="mt-6 flex flex-col md:flex-row justify-center items-center gap-6 text-gray-500 text-lg">
         <div><i class="fas fa-code mr-2 text-blue-600"></i>Front-end Development</div>
@@ -81,7 +128,8 @@
         <a href="https://github.com/RikoFrndsyh" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://www.linkedin.com/in/raihan-riko-farandsyah-84b08a32a/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+        <a href="https://www.linkedin.com/in/raihan-riko-farandsyah-84b08a32a/" target="_blank"
+          class="text-blue-600 hover:text-blue-800 transition">
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
@@ -174,7 +222,8 @@
             </div>
           </div>
         </a>
-        <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm cursor-pointer" onclick="document.getElementById('modalProject3').classList.add('show')">
+        <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm cursor-pointer"
+          onclick="document.getElementById('modalProject3').classList.add('show')">
           <img src="img/project3.png" class="img-standard project-img" alt="HARF beauty cosmetic">
           <div class="p-4">
             <h5 class="font-semibold">HARF Beauty Cosmetic</h5>
@@ -205,19 +254,23 @@
         </div>
         <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
           <h5 class="font-semibold text-lg mb-1">Teamwork</h5>
-          <p class="text-gray-500 text-sm">Bekerja sama dengan baik dalam tim, menghargai pendapat, dan saling mendukung.</p>
+          <p class="text-gray-500 text-sm">Bekerja sama dengan baik dalam tim, menghargai pendapat, dan saling
+            mendukung.</p>
         </div>
         <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
           <h5 class="font-semibold text-lg mb-1">Creativity</h5>
-          <p class="text-gray-500 text-sm">Mengembangkan solusi inovatif dan berpikir di luar kotak dalam menyelesaikan masalah.</p>
+          <p class="text-gray-500 text-sm">Mengembangkan solusi inovatif dan berpikir di luar kotak dalam menyelesaikan
+            masalah.</p>
         </div>
         <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
           <h5 class="font-semibold text-lg mb-1">Adaptability</h5>
-          <p class="text-gray-500 text-sm">Mudah menyesuaikan diri dengan perubahan teknologi, metode, atau lingkungan kerja.</p>
+          <p class="text-gray-500 text-sm">Mudah menyesuaikan diri dengan perubahan teknologi, metode, atau lingkungan
+            kerja.</p>
         </div>
         <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
           <h5 class="font-semibold text-lg mb-1">Problem Solving</h5>
-          <p class="text-gray-500 text-sm">Mampu menganalisis tantangan, merumuskan strategi, dan implementasi solusi secara sistematis.</p>
+          <p class="text-gray-500 text-sm">Mampu menganalisis tantangan, merumuskan strategi, dan implementasi solusi
+            secara sistematis.</p>
         </div>
       </div>
     </div>
@@ -229,12 +282,12 @@
       <h3 class="text-2xl font-bold mb-6">Kontak Saya</h3>
       <div class="flex justify-center gap-8 text-2xl">
         <a href="https://api.whatsapp.com/send?phone=6281945085175" target="_blank"
-           class="text-gray-700 hover:text-green-500 transition no-underline flex flex-col items-center gap-1">
+          class="text-gray-700 hover:text-green-500 transition no-underline flex flex-col items-center gap-1">
           <i class="fab fa-whatsapp"></i>
           <p class="text-sm font-medium">+6281945085175</p>
         </a>
         <a href="https://www.instagram.com/raihanriko_/" target="_blank"
-           class="text-gray-700 hover:text-pink-500 transition no-underline flex flex-col items-center gap-1">
+          class="text-gray-700 hover:text-pink-500 transition no-underline flex flex-col items-center gap-1">
           <i class="fab fa-instagram"></i>
           <p class="text-sm font-medium">@raihanriko_</p>
         </a>
@@ -261,4 +314,5 @@
   </script>
 
 </body>
+
 </html>

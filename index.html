@@ -4,186 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portofolio Riko</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .hover-card { transition: all 0.3s; }
+    .hover-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.12); }
+    .project-img { cursor: zoom-in; }
+    .img-standard { width: 100%; height: 180px; object-fit: cover; }
+    .img-small { width: 80px; height: 80px; object-fit: contain; margin: 0 auto; display: block; }
+    .profile-img { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; }
+    .nav-link:hover { background-color: #3b82f6; color: #fff !important; border-radius: 6px; }
+    /* Modal */
+    #modalProject3 { display: none; position: fixed; inset: 0; z-index: 50; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; }
+    #modalProject3.show { display: flex; }
+  </style>
 </head>
 
-<body class="bg-white text-dark">
+<body class="bg-white text-gray-800">
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-primary" href="#">PORTOFOLIO</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
+  <nav class="bg-white border-b shadow-sm sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a class="text-blue-600 font-bold text-lg tracking-wide" href="#">PORTOFOLIO</a>
+      <!-- Hamburger -->
+      <button id="nav-toggle" class="md:hidden text-gray-600 focus:outline-none text-2xl">
+        <i class="fas fa-bars"></i>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto gap-2">
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#Profile">Profile</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#Skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#sertifikat-kompetensi">Certification</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#project-saya">Project</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold" href="#softskill">Soft Skills</a></li>
-          <li class="nav-item"><a class="nav-link fw-semibold text-white bg-primary rounded px-3" href="pdf/cv.pdf" download><i class="fa fa-download me-1"></i>Download CV</a></li>
-        </ul>
-      </div>
+      <!-- Menu -->
+      <ul id="nav-menu" class="hidden md:flex gap-2 items-center list-none">
+        <li><a class="nav-link px-3 py-1 font-semibold" href="#Profile">Profile</a></li>
+        <li><a class="nav-link px-3 py-1 font-semibold" href="#Skills">Skills</a></li>
+        <li><a class="nav-link px-3 py-1 font-semibold" href="#sertifikat-kompetensi">Certification</a></li>
+        <li><a class="nav-link px-3 py-1 font-semibold" href="#project-saya">Project</a></li>
+        <li><a class="nav-link px-3 py-1 font-semibold" href="#softskill">Soft Skills</a></li>
+        <li>
+          <a class="px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+             href="pdf/cv.pdf" download>
+            <i class="fa fa-download mr-1"></i>Download CV
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-3">
+      <ul class="flex flex-col gap-1 list-none">
+        <li><a class="nav-link block px-3 py-2 font-semibold" href="#Profile">Profile</a></li>
+        <li><a class="nav-link block px-3 py-2 font-semibold" href="#Skills">Skills</a></li>
+        <li><a class="nav-link block px-3 py-2 font-semibold" href="#sertifikat-kompetensi">Certification</a></li>
+        <li><a class="nav-link block px-3 py-2 font-semibold" href="#project-saya">Project</a></li>
+        <li><a class="nav-link block px-3 py-2 font-semibold" href="#softskill">Soft Skills</a></li>
+        <li>
+          <a class="inline-block mt-1 px-4 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+             href="pdf/cv.pdf" download>
+            <i class="fa fa-download mr-1"></i>Download CV
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 
   <!-- Profile -->
-  <section id="Profile" class="bg-light py-5">
-    <div class="container text-center">
-      <img src="img/riko.png" alt="Foto Riko" class="profile-img shadow mb-3">
-      <h2 class="fw-bold mt-3">Halo, Saya Raihan Riko Farandsyah</h2>
-      <p class="mx-auto" style="max-width: 600px;">Saya seorang pengembang front-end yang fokus pada solusi. Saya bersemangat dalam pengembangan web, 
-        dengan keahlian dalam desain UI/UX dan menciptakan sistem yang tidak hanya efisien tetapi juga responsif. Dengan pondasi kuat dalam HTML5, 
-        CSS3, dan JavaScript, saya berkomitmen untuk membangun antarmuka web yang modern, fungsional, dan memberikan pengalaman pengguna yang luar 
-        biasa.</p>
-      <div class="mt-4 d-flex justify-content-center flex-column flex-md-row align-items-center gap-4 fs-5 text-secondary">
-        <div><i class="fas fa-code me-2 text-primary"></i>Front-end Development</div>
-        <div><i class="fas fa-laptop-code me-2 text-primary"></i>Responsive Web Design</div>
+  <section id="Profile" class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <img src="img/riko.png" alt="Foto Riko" class="profile-img shadow-md mx-auto mb-4">
+      <h2 class="text-2xl font-bold mt-3">Halo, Saya Raihan Riko Farandsyah</h2>
+      <p class="mx-auto mt-3 text-gray-600 max-w-xl">
+        Saya seorang pengembang front-end yang fokus pada solusi. Saya bersemangat dalam pengembangan web,
+        dengan keahlian dalam desain UI/UX dan menciptakan sistem yang tidak hanya efisien tetapi juga responsif. Dengan pondasi kuat dalam HTML5,
+        CSS3, dan JavaScript, saya berkomitmen untuk membangun antarmuka web yang modern, fungsional, dan memberikan pengalaman pengguna yang luar biasa.
+      </p>
+      <div class="mt-6 flex flex-col md:flex-row justify-center items-center gap-6 text-gray-500 text-lg">
+        <div><i class="fas fa-code mr-2 text-blue-600"></i>Front-end Development</div>
+        <div><i class="fas fa-laptop-code mr-2 text-blue-600"></i>Responsive Web Design</div>
       </div>
-      <div class="mt-4 d-flex justify-content-center gap-4 fs-4">
-        <a href="https://github.com/RikoFrndsyh" target="_blank" class="text-dark"><i class="fab fa-github me-2 text-primary"></i></a>
-        <a href="https://www.linkedin.com/in/raihan-riko-farandsyah-84b08a32a/" target="_blank" class="text-dark"><i class="fab fa-linkedin me-2 text-primary"></i></a>
+      <div class="mt-6 flex justify-center gap-6 text-2xl">
+        <a href="https://github.com/RikoFrndsyh" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/raihan-riko-farandsyah-84b08a32a/" target="_blank" class="text-blue-600 hover:text-blue-800 transition">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </div>
     </div>
   </section>
 
-
   <!-- Skills -->
-  <section id="Skills" class="py-5">
-    <div class="container text-center">
-      <h3 class="fw-bold mb-4">Skills</h3>
-      <div class="row g-4 justify-content-center">
-        <div class="col-4 col-md-2">
-          <div class="card hover-card p-3">
-            <img src="img/HTML5.png" class="img-small" alt="HTML5">
-            <h6 class="mt-2 mb-0">HTML5</h6>
-          </div>
+  <section id="Skills" class="py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-8">Skills</h3>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="hover-card bg-white border rounded-xl p-4 w-32 shadow-sm text-center">
+          <img src="img/HTML5.png" class="img-small" alt="HTML5">
+          <h6 class="mt-2 font-semibold text-sm">HTML5</h6>
         </div>
-        <div class="col-4 col-md-2">
-          <div class="card hover-card p-3">
-            <img src="img/CSS3.png" class="img-small" alt="CSS3">
-            <h6 class="mt-2 mb-0">CSS3</h6>
-          </div>
+        <div class="hover-card bg-white border rounded-xl p-4 w-32 shadow-sm text-center">
+          <img src="img/CSS3.png" class="img-small" alt="CSS3">
+          <h6 class="mt-2 font-semibold text-sm">CSS3</h6>
         </div>
-        <div class="col-4 col-md-2">
-          <div class="card hover-card p-3">
-            <img src="img/JS.png" class="img-small" alt="JavaScript">
-            <h6 class="mt-2 mb-0">JavaScript</h6>
-          </div>
+        <div class="hover-card bg-white border rounded-xl p-4 w-32 shadow-sm text-center">
+          <img src="img/JS.png" class="img-small" alt="JavaScript">
+          <h6 class="mt-2 font-semibold text-sm">JavaScript</h6>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Sertifikat Kompetensi -->
-  <section id="sertifikat-kompetensi" class="bg-light py-5">
-    <div class="container">
-      <h3 class="fw-bold text-center mb-4">Sertifikat Kompetensi</h3>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <a href="pdf/Profesi Penyiar Pemula.pdf" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/Profesi Penyiar Pemula.jpg" class="img-standard" alt="Profesi Penyiar Pemula">
-              <div class="card-body text-center">
-                <h5>Profesi Penyiar Pemula</h5>
-              </div>
+  <section id="sertifikat-kompetensi" class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-8">Sertifikat Kompetensi</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
+        <a href="pdf/Profesi Penyiar Pemula.pdf" target="_blank" class="no-underline w-full">
+          <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm">
+            <img src="img/Profesi Penyiar Pemula.jpg" class="img-standard" alt="Profesi Penyiar Pemula">
+            <div class="p-4 text-center">
+              <h5 class="font-semibold">Profesi Penyiar Pemula</h5>
             </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="pdf/CODEPOLITAN HTMLCSS.pdf" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/CODEPOLITAN HTMLCSS.jpg" class="img-standard" alt="Dasar-dasar HTML dan CSS">
-              <div class="card-body text-center">
-                <h5>Dasar-dasar HTML dan CSS</h5>
-              </div>
+          </div>
+        </a>
+        <a href="pdf/CODEPOLITAN HTMLCSS.pdf" target="_blank" class="no-underline w-full">
+          <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm">
+            <img src="img/CODEPOLITAN HTMLCSS.jpg" class="img-standard" alt="Dasar-dasar HTML dan CSS">
+            <div class="p-4 text-center">
+              <h5 class="font-semibold">Dasar-dasar HTML dan CSS</h5>
             </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="pdf/CODEPOLITAN JS.pdf" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/CODEPOLITAN JS.jpg" class="img-standard" alt="JavaScript Dasar">
-              <div class="card-body text-center">
-                <h5>JavaScript Dasar</h5>
-              </div>
+          </div>
+        </a>
+        <a href="pdf/CODEPOLITAN JS.pdf" target="_blank" class="no-underline w-full">
+          <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm">
+            <img src="img/CODEPOLITAN JS.jpg" class="img-standard" alt="JavaScript Dasar">
+            <div class="p-4 text-center">
+              <h5 class="font-semibold">JavaScript Dasar</h5>
             </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sertifikat Lainnya -->
-  <section id="sertifikat-lainnya" class="py-5">
-    <div class="container">
-      <h3 class="fw-bold text-center mb-4">Sertifikat Lainnya</h3>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <a href="pdf/Peluang Karir Dunia IT Non Coding.pdf" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/Peluang Karir Dunia IT Non Coding.png" class="img-standard" alt="Peluang Karir IT Non Coding">
-              <div class="card-body text-center"><h5>Peluang Karir Dunia IT Non Coding</h5></div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="pdf/Introduction Web Developer for Career Opportunities.pdf" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/Introduction Web Developer for Career Opportunities.jpg" class="img-standard" alt="Intro Web Developer">
-              <div class="card-body text-center"><h5>Introduction Web Developer for Career Opportunities</h5></div>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="pdf/Keamanan Siber.pdf" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/Keamanan Siber.jpg" class="img-standard" alt="Keamanan Siber">
-              <div class="card-body text-center"><h5>Keamanan Siber di Era Digital: Peluang dan Tantangan</h5></div>
-            </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Project Saya -->
-  <section id="project-saya" class="bg-light py-5">
-    <div class="container">
-      <h3 class="fw-bold text-center mb-4">Project Saya</h3>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <a href="#" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/project4.jpg" class="img-standard" alt="Permohonan Liputan">
-              <div class="card-body"><h5>Permohonan Liputan Balai Tekkomdik</h5><p>HTML, CSS, Bootstrap, PHP, MySQL</p></div>
+  <section id="project-saya" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-8">Project Saya</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <a href="#" target="_blank" class="no-underline">
+          <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm">
+            <img src="img/project4.jpg" class="img-standard" alt="Permohonan Liputan">
+            <div class="p-4">
+              <h5 class="font-semibold">Permohonan Liputan Balai Tekkomdik</h5>
+              <p class="text-gray-500 text-sm mt-1">HTML, CSS, Bootstrap, PHP, MySQL</p>
             </div>
-          </a>
-        </div>
-        <div class="col-md-6">
-          <a href="#" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/project2.png" class="img-standard" alt="Online Shop Pakaian">
-              <div class="card-body"><h5>Fashion Online Shop</h5><p>HTML, CSS, PHP, MySQL</p></div>
+          </div>
+        </a>
+        <a href="#" target="_blank" class="no-underline">
+          <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm">
+            <img src="img/project2.png" class="img-standard" alt="Online Shop Pakaian">
+            <div class="p-4">
+              <h5 class="font-semibold">Fashion Online Shop</h5>
+              <p class="text-gray-500 text-sm mt-1">HTML, CSS, PHP, MySQL</p>
             </div>
-          </a>
-        </div>
-        <div class="col-md-6">
-          <a href="https://rikofrndsyh.github.io/Mortality-Apparel/" target="_blank" class="text-decoration-none">
-            <div class="card hover-card">
-              <img src="img/project1.png" class="img-standard" alt="Mortality Appareal">
-              <div class="card-body"><h5>Mortality Apparel</h5><p>HTML & CSS</p></div>
+          </div>
+        </a>
+        <a href="https://rikofrndsyh.github.io/Mortality-Apparel/" target="_blank" class="no-underline">
+          <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm">
+            <img src="img/project1.png" class="img-standard" alt="Mortality Appareal">
+            <div class="p-4">
+              <h5 class="font-semibold">Mortality Apparel</h5>
+              <p class="text-gray-500 text-sm mt-1">HTML &amp; CSS</p>
             </div>
-          </a>
-        </div>
-        <div class="col-md-6">
-          <div class="card hover-card">
-            <img src="img/project3.png" class="img-standard project-img" alt="HARF beauty cosmetic" data-bs-toggle="modal" data-bs-target="#modalProject3">
-            <div class="card-body"><h5>HARF Beauty Cosmetic</h5><p>Figma Interface</p></div>
+          </div>
+        </a>
+        <div class="hover-card bg-white border rounded-xl overflow-hidden shadow-sm cursor-pointer" onclick="document.getElementById('modalProject3').classList.add('show')">
+          <img src="img/project3.png" class="img-standard project-img" alt="HARF beauty cosmetic">
+          <div class="p-4">
+            <h5 class="font-semibold">HARF Beauty Cosmetic</h5>
+            <p class="text-gray-500 text-sm mt-1">Figma Interface</p>
           </div>
         </div>
       </div>
@@ -191,47 +186,79 @@
   </section>
 
   <!-- Modal Figma Project -->
-  <div class="modal fade" id="modalProject3" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body p-0">
-          <img src="img/project3.png" class="img-fluid rounded" alt="HARF Beauty Figma">
-        </div>
+  <div id="modalProject3" onclick="this.classList.remove('show')">
+    <div class="bg-white rounded-xl overflow-hidden max-w-2xl w-full mx-4" onclick="event.stopPropagation()">
+      <div>
+        <img src="img/project3.png" class="w-full rounded-xl" alt="HARF Beauty Figma">
       </div>
     </div>
   </div>
 
   <!-- Soft Skills -->
-  <section id="softskill" class="py-5">
-    <div class="container">
-      <h3 class="fw-bold text-center mb-4">Soft Skills</h3>
-      <div class="row g-4">
-        <div class="col-md-4"><h5>Communication</h5><p>Menyampaikan ide secara jelas, efektif, dan sopan dalam berbagai situasi.</p></div>
-        <div class="col-md-4"><h5>Teamwork</h5><p>Bekerja sama dengan baik dalam tim, menghargai pendapat, dan saling mendukung.</p></div>
-        <div class="col-md-4"><h5>Creativity</h5><p>Mengembangkan solusi inovatif dan berpikir di luar kotak dalam menyelesaikan masalah.</p></div>
-        <div class="col-md-4"><h5>Adaptability</h5><p>Mudah menyesuaikan diri dengan perubahan teknologi, metode, atau lingkungan kerja.</p></div>
-        <div class="col-md-4"><h5>Problem Solving</h5><p>Mampu menganalisis tantangan, merumuskan strategi, dan implementasi solusi secara sistematis.</p></div>
+  <section id="softskill" class="bg-gray-50 py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h3 class="text-2xl font-bold text-center mb-8">Soft Skills</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
+          <h5 class="font-semibold text-lg mb-1">Communication</h5>
+          <p class="text-gray-500 text-sm">Menyampaikan ide secara jelas, efektif, dan sopan dalam berbagai situasi.</p>
+        </div>
+        <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
+          <h5 class="font-semibold text-lg mb-1">Teamwork</h5>
+          <p class="text-gray-500 text-sm">Bekerja sama dengan baik dalam tim, menghargai pendapat, dan saling mendukung.</p>
+        </div>
+        <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
+          <h5 class="font-semibold text-lg mb-1">Creativity</h5>
+          <p class="text-gray-500 text-sm">Mengembangkan solusi inovatif dan berpikir di luar kotak dalam menyelesaikan masalah.</p>
+        </div>
+        <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
+          <h5 class="font-semibold text-lg mb-1">Adaptability</h5>
+          <p class="text-gray-500 text-sm">Mudah menyesuaikan diri dengan perubahan teknologi, metode, atau lingkungan kerja.</p>
+        </div>
+        <div class="hover-card bg-white border rounded-xl p-5 shadow-sm">
+          <h5 class="font-semibold text-lg mb-1">Problem Solving</h5>
+          <p class="text-gray-500 text-sm">Mampu menganalisis tantangan, merumuskan strategi, dan implementasi solusi secara sistematis.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Kontak -->
-  <section id="kontak-saya" class="bg-light py-5">
-    <div class="container text-center">
-      <h3 class="fw-bold mb-4">Kontak Saya</h3>
-      <div class="d-flex justify-content-center gap-4 fs-3">
-        <a href="https://api.whatsapp.com/send?phone=6281945085175" target="_blank" class="text-decoration-none"><i class="fab fa-whatsapp"></i><p>+6281945085175</p></a>
-        <a href="https://www.instagram.com/raihanriko_/" target="_blank" class="text-decoration-none"><i class="fab fa-instagram"></i> <p>@raihanriko_</p></a>
-        <!-- <a href="#" target="_blank" class="text-decoration-none"><i class="fab fa-discord"></i><p>.riikoo</p></a> -->
+  <section id="kontak-saya" class="py-16">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h3 class="text-2xl font-bold mb-6">Kontak Saya</h3>
+      <div class="flex justify-center gap-8 text-2xl">
+        <a href="https://api.whatsapp.com/send?phone=6281945085175" target="_blank"
+           class="text-gray-700 hover:text-green-500 transition no-underline flex flex-col items-center gap-1">
+          <i class="fab fa-whatsapp"></i>
+          <p class="text-sm font-medium">+6281945085175</p>
+        </a>
+        <a href="https://www.instagram.com/raihanriko_/" target="_blank"
+           class="text-gray-700 hover:text-pink-500 transition no-underline flex flex-col items-center gap-1">
+          <i class="fab fa-instagram"></i>
+          <p class="text-sm font-medium">@raihanriko_</p>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-primary text-white text-center py-3">
-    <p class="mb-0 fw-semibold">©2025 Raihan Riko Farandsyah</p>
+  <footer class="bg-blue-600 text-white text-center py-4">
+    <p class="font-semibold">©2025 Raihan Riko Farandsyah</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
+  </script>
+
 </body>
 </html>

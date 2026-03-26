@@ -141,22 +141,43 @@
     <div class="max-w-6xl mx-auto px-4">
       <h3 class="text-2xl font-bold text-center mb-8">Pendidikan</h3>
       <div class="max-w-2xl mx-auto">
-        <div class="hover-card bg-white border rounded-xl p-6 shadow-sm flex items-start gap-5">
-          <div class="text-blue-600 text-4xl mt-1">
-            <i class="fas fa-graduation-cap"></i>
+        <div class="hover-card bg-white border rounded-2xl overflow-hidden shadow-md">
+          <!-- Header card dengan gradient -->
+          <div class="bg-gradient-to-r from-blue-600 to-blue-400 px-6 py-4 flex items-center gap-4">
+            <img src="img/UTDI-logo.png" alt="Logo UTDI"
+              class="w-14 h-14 object-contain bg-white rounded-xl p-1 shadow">
+            <div class="text-white">
+              <p class="text-xs font-semibold uppercase tracking-widest opacity-80">Perguruan Tinggi</p>
+              <h5 class="font-bold text-base leading-tight">Universitas Teknologi Digital Indonesia</h5>
+            </div>
           </div>
-          <div>
-            <h5 class="font-bold text-lg">Universitas Teknologi Digital Indonesia</h5>
-            <p class="text-gray-500 text-sm mt-1">S1 Informatika</p>
-            <p class="text-gray-400 text-sm mt-1"><i class="fas fa-calendar-alt mr-1"></i>2022 – 2026</p>
-            <span class="inline-block mt-3 px-3 py-1 bg-blue-50 text-blue-600 font-semibold text-sm rounded-full">
-              IPK 3.79 / 4.00
-            </span>
+          <!-- Body card -->
+          <div class="px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="text-blue-500 text-2xl">
+                <i class="fas fa-book-open"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-gray-800">S1 Informatika</p>
+                <p class="text-gray-400 text-sm mt-0.5">
+                  <i class="fas fa-calendar-alt mr-1"></i>2022 – 2026
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col items-start sm:items-end gap-2">
+              <span class="px-4 py-1.5 bg-blue-600 text-white text-sm font-bold rounded-full shadow-sm">
+                IPK 3.79 / 4.00
+              </span>
+              <span class="px-3 py-1 bg-green-50 text-green-600 text-xs font-semibold rounded-full border border-green-200">
+                <i class="fas fa-circle text-green-400 text-xs mr-1"></i>Aktif
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Skills -->
   <section id="Skills" class="py-16">
